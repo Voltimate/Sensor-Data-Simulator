@@ -1,0 +1,39 @@
+import random
+import time
+
+
+print("Temperature Sensor Simulation")
+
+temperatures=[]
+
+
+for i in range(10):
+
+    temp=random.uniform(25,40)
+
+    temperatures.append(temp)
+
+    print(
+        "Reading",
+        i+1,
+        ":",
+        round(temp,2),
+        "°C"
+    )
+
+    time.sleep(1)
+
+
+average=sum(temperatures)/len(temperatures)
+
+print("--------------------")
+print("Average Temperature:",
+      round(average,2),
+      "°C")
+
+
+if average > 35:
+    print("Warning: High temperature detected")
+
+else:
+    print("Temperature normal")
